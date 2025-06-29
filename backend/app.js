@@ -65,7 +65,7 @@ app.post('/orders', async (req, res) => {
 
 // ⚠️ Catch-all route to support React Router (frontend routes)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'dist/index.html'));
 });
 
 // Start the server
