@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import express from 'express';
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -68,4 +69,4 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Not found' });
 });
 
-app.listen(3000);
+app.listen(PORT);
