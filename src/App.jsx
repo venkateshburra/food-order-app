@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import Header from "./components/Header";
@@ -14,6 +15,7 @@ function App() {
         <Cart />
         <Checkout />
       </CartContextProvider>
+      <Toaster />
     </UserProgressContextProvider>
   );
 }

@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { currencyFormatter } from "../utili/formatting";
 import Button from "./UI/Button";
 import CartContext from "./store/CartContext";
+import toast from "react-hot-toast";
 
 export default function MealItem({ meal }) {
   const cartCtx = useContext(CartContext);
 
   function handleAddMealToCart() {
     cartCtx.addItem(meal);
+    toast.success('Item added to Cart successfully')
   }
 
 
