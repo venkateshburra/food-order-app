@@ -1,12 +1,10 @@
 import fs from 'node:fs/promises';
-import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import express from 'express';
 
-dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 
 // Serve static frontend files
