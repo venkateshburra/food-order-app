@@ -9,7 +9,7 @@ export default function Meals() {
     data: loadedMeals,
     isloading,
     error,
-  } = useHttp("http://localhost:3000/meals", requestConfig, []);
+  } = useHttp("https://food-order-app-2.onrender.com/meals", requestConfig, []);
 
   if (isloading) {
     return <p className="center">Fetching meals...</p>
