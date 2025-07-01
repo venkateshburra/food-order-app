@@ -1,16 +1,16 @@
 import fs from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'url';
-
+import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import express from 'express';
 
+dotenv.config();
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 
 // Serve static frontend files
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // Parse JSON request bodies
 app.use(bodyParser.json());
