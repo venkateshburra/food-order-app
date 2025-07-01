@@ -1,14 +1,18 @@
 import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'url';
+
 import bodyParser from 'body-parser';
 import express from 'express';
-
 
 const app = express();
 const PORT = 3000;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Serve static frontend files
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Parse JSON request bodies
 app.use(bodyParser.json());
