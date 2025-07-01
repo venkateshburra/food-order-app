@@ -8,9 +8,6 @@ import express from 'express';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Needed for __dirname in ES Modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -63,12 +60,6 @@ app.post('/orders', async (req, res) => {
   res.status(201).json({ message: 'Order created!' });
 });
 
-// ⚠️ Catch-all route to support React Router (frontend routes)
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/*splat', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
-});
 
 // Start the server
 app.listen(PORT, () => {
